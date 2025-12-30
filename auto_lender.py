@@ -85,7 +85,7 @@ GITHUB_HEADERS = {
 }
 
 BODY_FETCH = {
-  "filters": [
+  "filters": ["tenure_2M"
   ],
   "sort_by": [
     "roi_high_low",
@@ -120,7 +120,7 @@ def limit_array(arr, limit=10):
 def fetch_loans():
     response = requests.request("POST",URL_FETCH, headers=HEADERS, json=BODY_FETCH)
       # Debugging line to see the response content
-    print("response content:", response.text)
+    # print("response content:", response.text)
     if response.status_code == 200:
         return response.json()
     else:
